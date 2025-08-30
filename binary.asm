@@ -6,37 +6,34 @@ section .text
     global ToBinary
 
 ToBinary:
-    ; Input: rdi = num (unsigned int)
-    ; Output: rax = result (int)
-
-    xor rax, rax          ; Clear rax for the result
-    xor rcx, rcx          ; Clear rcx for index i
+    xor rax, rax          
+    xor rcx, rcx         
 
 .loop1:
-    test rdi, rdi         ; Check if num > 0
-    jz .end_loop1         ; If num is 0, exit loop
+    test rdi, rdi         
+    jz .end_loop1         
 
-    mov rdx, rdi          ; Copy num to rdx
-    and rdx, 1            ; Get the last bit (num % 2)
-    mov [binary_num + rcx*4], edx ; Store in binary_num[i]
+    mov rdx, rdi          
+    and rdx, 1            
+    mov [binary_num + rcx*4], edx 
     
-    shr rdi, 1            ; num = num / 2
-    inc rcx               ; i++
-    jmp .loop1            ; Repeat the loop
+    shr rdi, 1   
+    inc rcx
+    jmp .loop1     
 
 .end_loop1:
-    dec rcx               ; Adjust i for the next loop
+    dec rcx         
 
 .loop2:
-    cmp rcx, 0            ; Check if j >= 0
-    jl .end_loop2         ; If j < 0, exit loop
+    cmp rcx, 0    
+    jl .end_loop2  
 
-    mov edx, [binary_num + rcx*4] ; Load binary_num[j]
+    mov edx, [binary_num + rcx*4]
     imul rax, rax, 10
     add rax, [binary_num + rcx*4]
     
-    dec rcx               ; j--
-    jmp .loop2            ; Repeat the loop
+    dec rcx     
+    jmp .loop2      
 
 .end_loop2:
     ret
