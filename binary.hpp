@@ -1,8 +1,8 @@
 #pragma once
 // basicly algorithm doing / 2 and reminder is storing in array and then prints all backwards
-inline unsigned int ToBinary(unsigned int num) {
+inline int ToBinary(unsigned int num) {
     unsigned int *binary_num = new unsigned int[32]{};
-    unsigned int res = 0;
+    int res = 0;
     int i = 0; // iteration we are currently elapsed
     while (num > 0) {
         binary_num[i] = num % 2;
