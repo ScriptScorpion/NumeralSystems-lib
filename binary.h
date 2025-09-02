@@ -2,7 +2,7 @@
 #include <stdlib.h>
 // basicly algorithm doing / 2 and reminder is storing in array and then prints all backwards
 static inline int ToBinary(unsigned int num) {
-    unsigned int *binary_num = (unsigned int*)malloc(sizeof(unsigned int) * 32);
+    unsigned int *binary_num = (unsigned int*)calloc(sizeof(unsigned int) * 32, sizeof(unsigned int));
     int res = 0;
     int i = 0; // iteration we are currently elapsed
     while (num > 0) {
