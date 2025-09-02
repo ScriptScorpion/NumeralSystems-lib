@@ -2,7 +2,7 @@
   
 # Binary-lib:
   * for C language files `#include "binary.h"`, for C++ language files `#include "binary.hpp"`, for Assembly language files `%INCLUDE "binary.asm"`.
-  * for C/C++ files do `unsigned int p = ToBinary(number)` 'number' - it is any number greater than 0.
+  * for C/C++ files do `int p = ToBinary(number)` 'number' - it is any number greater than 0.
   * for Assembly language files move number into `rdi` register and do `call ToBinary` and you get output in `rax` register as number.
 # Hex-lib:
   * for C language files `#include "hex.h"`, for C++ language files `#include "hex.hpp"`, for Assembly language files `%INCLUDE "hex.asm"`.
