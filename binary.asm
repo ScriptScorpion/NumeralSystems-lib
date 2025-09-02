@@ -7,7 +7,9 @@ section .text
 
 ToBinary:
     xor rax, rax          
-    xor rcx, rcx         
+    xor rcx, rcx
+    cmp rdi, 0
+    jl .end_loop2
 
 .loop1:
     test rdi, rdi         
@@ -23,7 +25,7 @@ ToBinary:
 
 .end_loop1:
     dec rcx         
-
+    
 .loop2:
     cmp rcx, 0    
     jl .end_loop2  
