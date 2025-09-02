@@ -1,7 +1,10 @@
 #pragma once
 #include <string>
 // basicly algorithm doing / 16 and reminder is storing in array and then prints all backwards
-inline std::string ToHex(unsigned int num) {
+inline std::string ToHex(int num) {
+     if (num < 0) {
+          return "";
+     }
      unsigned char *hex_num = new unsigned char[32]{};
      std::string res = "";
      int i = 0; // iteration we are currently elapsed
