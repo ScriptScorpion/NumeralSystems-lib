@@ -8,7 +8,8 @@ section .text
 ToHex:
     ; Input: rdi = num
     ; Output: rax = pointer to res
-
+    cmp rdi, 0
+    jl exit
     xor rbx, rbx        
     mov rcx, rdi ; making copy of input
     mov rsi, 16 ; what will be divided
@@ -59,4 +60,7 @@ ToHex:
     mov rax, res             ; return pointer to res
     xor rsi, rsi
 
+    ret
+
+exit:
     ret
