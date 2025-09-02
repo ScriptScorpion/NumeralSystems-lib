@@ -6,10 +6,11 @@ section .text
     global ToBinary
 
 ToBinary:
-    xor rax, rax          
-    xor rcx, rcx
     cmp rdi, 0
     jl .end_loop2
+    xor rax, rax          
+    xor rcx, rcx
+    jmp .loop1
 
 .loop1:
     test rdi, rdi         
@@ -24,7 +25,8 @@ ToBinary:
     jmp .loop1     
 
 .end_loop1:
-    dec rcx         
+    dec rcx
+    jmp .loop2
     
 .loop2:
     cmp rcx, 0    
