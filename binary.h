@@ -1,7 +1,10 @@
 #pragma once
 #include <stdlib.h>
 // basicly algorithm doing / 2 and reminder is storing in array and then prints all backwards
-static inline int ToBinary(unsigned int num) {
+static inline int ToBinary(int num) {
+    if (num < 0) {
+        return 0;
+    }
     unsigned int *binary_num = (unsigned int*)calloc(sizeof(unsigned int) * 32, sizeof(unsigned int));
     int res = 0;
     int i = 0; // iteration we are currently elapsed
