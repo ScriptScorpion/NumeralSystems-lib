@@ -3,7 +3,7 @@
 // basicly algorithm doing / 16 and reminder is storing in array and then prints all backwards
 static inline char *ToHex(int num) {
      if (num < 0) {
-          return 0;
+          return "";
      }
      unsigned char *hex_num = (unsigned char*)calloc(sizeof(unsigned char) * 32, sizeof(unsigned char)); // we creating with unsigned char to insure no strange characters are going to output
      char *res = (char*)calloc(sizeof(char) * 32, sizeof(char)); 
