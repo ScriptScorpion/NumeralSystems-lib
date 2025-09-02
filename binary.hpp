@@ -1,6 +1,9 @@
 #pragma once
 // basicly algorithm doing / 2 and reminder is storing in array and then prints all backwards
-inline int ToBinary(unsigned int num) {
+inline int ToBinary(int num) {
+    if (num < 0) {
+        return 0;
+    }
     unsigned int *binary_num = new unsigned int[32]{};
     int res = 0;
     int i = 0; // iteration we are currently elapsed
