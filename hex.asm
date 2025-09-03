@@ -21,7 +21,7 @@ ToHex:
     jle .convert         
     mov rax, rcx
     div rsi ; division is (rax : rsi) remainder is in rdx and result of division is in rax
-    mov [hex_num + rbx], dl 
+    mov [hex_num + rbx], rdx 
     inc rbx              
     mov rcx, rax    
     jmp .loop
