@@ -1,6 +1,6 @@
 #pragma once
 // basicly algorithm doing / 2 and reminder is storing in array and then prints all backwards
-inline unsigned int ToBinary(int num) {
+inline unsigned int ToBinary(int num) noexcept {
     if (num < 0) {
         return 0;
     }
