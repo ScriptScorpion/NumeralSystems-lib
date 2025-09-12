@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 // basicly algorithm doing / 16 and reminder is storing in array and then prints all backwards
-inline std::string ToHex(int num) {
+inline std::string ToHex(int num) noexcept{
      if (num < 0) {
           return "";
      }
