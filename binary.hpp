@@ -18,3 +18,24 @@ inline unsigned int ToBinary(int num) noexcept {
     delete[] binary_num;
     return res;
 }
+// this code is for big numbers only
+inline std::string ToBigBinary(long int num) noexcept { 
+     if (num <= 0) return "0";
+    
+     std::string binary;
+     while (num > 0) {
+          binary = binary + (num % 2 ? "1" : "0"); // if remainder of division is above 0 then it is 1 else 0
+          num /= 2;
+     }
+     return binary;
+}
+inline std::string ToBigBinary(long long int num) noexcept { 
+     if (num <= 0) return "0";
+    
+     std::string binary;
+     while (num > 0) {
+          binary = binary + (num % 2 ? "1" : "0"); // if remainder of division is above 0 then it is 1 else 0
+          num /= 2;
+     }
+     return binary;
+}
